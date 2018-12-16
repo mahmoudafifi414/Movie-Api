@@ -5,38 +5,41 @@ namespace App\Http\Controllers;
 use App\Movie;
 use App\UserMovieRating;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class RatingController extends Controller
 {
     public function rateMovie($movieId, Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'ratingNumber' => 'required|numeric|between:0,5',
         ]);
         if ($validator->fails()) {
-            return response()->json(['status' => 'error', 'errors' => $validator->errors()]);
+            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
         }
+
         if ($this->checkIfUserRateBefore($movieId, $request->ratingNumber)) {
-            return response()->json(['status' => 'success', 'message' => 'Rating updated successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Rating updated successfully'], 200);
         }
+
         $ratingNumber = $request->ratingNumber;
         $userMovieRating = new UserMovieRating;
         $userMovieRating->movie_id = $movieId;
-        $userMovieRating->user_id = Auth::user()->id;
+        $userMovieRating->user_id = 1;
         $userMovieRating->rating_number = $ratingNumber;
         if ($userMovieRating->save()) {
             $this->updateMoviesTable($movieId);
-            return response()->json(['status' => 'success', 'message' => 'Rating done successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Rating done successfully'], 200);
         }
-        return response()->json(['status' => 'error']);
+        return response()->json(['status' => 'error'], 500);
     }
 
     //if user rate for this movie before then update his rating
     public function checkIfUserRateBefore($movieId, $ratingNumber)
     {
-        $ratingRelatedToUser = UserMovieRating::where('user_id', Auth::user()->id)
+        $ratingRelatedToUser = UserMovieRating::where('user_id', /*Auth::user()->id*/
+            1)
             ->where('movie_id', $movieId)
             ->first();
         if ($ratingRelatedToUser) {

@@ -19,8 +19,12 @@ class CreateUserMovieRating extends Migration
             $table->unsignedInteger('movie_id');
             $table->unsignedInteger('user_id');
 
-            $table->foreign('movie_id')->references('id')->on('movies');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('movie_id')->references('id')->on('movies')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

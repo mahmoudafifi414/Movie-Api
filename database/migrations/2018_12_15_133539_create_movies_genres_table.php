@@ -18,8 +18,12 @@ class CreateMoviesGenresTable extends Migration
             $table->unsignedInteger('movie_id');
             $table->unsignedInteger('genre_id');
             //foreign keys
-            $table->foreign('movie_id')->references('id')->on('movies');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('movie_id')->references('id')->on('movies')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('genre_id')->references('id')->on('genres')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

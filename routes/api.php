@@ -10,8 +10,9 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::prefix('v1')->middleware('jwt.auth')->group(function () {
+Route::prefix('v1')/*->middleware('jwt.auth')*/->group(function () {
     Route::resource('movie', 'MoviesController');
+    Route::get('movies/{size?}', 'MoviesController@getMovies');
 
 //route for sorting movies
 
