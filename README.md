@@ -36,3 +36,6 @@ you can save new Movie in the following json shape
 
 run the test through
  ./vendor/bin/phpunit
+ 
+ 
+ please run "composer install"
