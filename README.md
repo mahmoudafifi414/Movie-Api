@@ -37,5 +37,10 @@ you can save new Movie in the following json shape
 run the test through
  ./vendor/bin/phpunit
  
+ before run test you should know that there is middleware with 
+ jwt will return status code 400 so remove the middleware 
+ to run tests
  
- please run "composer install"
+-please run "composer install"
+ 
+

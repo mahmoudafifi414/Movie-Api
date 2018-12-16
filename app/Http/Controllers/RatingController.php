@@ -26,20 +26,19 @@ class RatingController extends Controller
         $ratingNumber = $request->ratingNumber;
         $userMovieRating = new UserMovieRating;
         $userMovieRating->movie_id = $movieId;
-        $userMovieRating->user_id = 1;
+        $userMovieRating->user_id = Auth::user()->id;
         $userMovieRating->rating_number = $ratingNumber;
         if ($userMovieRating->save()) {
             $this->updateMoviesTable($movieId);
             return response()->json(['status' => 'success', 'message' => 'Rating done successfully'], 200);
         }
-        return response()->json(['status' => 'error'], 500);
+        return response()->json(['status' => 'error'],500);
     }
 
     //if user rate for this movie before then update his rating
     public function checkIfUserRateBefore($movieId, $ratingNumber)
     {
-        $ratingRelatedToUser = UserMovieRating::where('user_id', /*Auth::user()->id*/
-            1)
+        $ratingRelatedToUser = UserMovieRating::where('user_id', Auth::user()->id)
             ->where('movie_id', $movieId)
             ->first();
         if ($ratingRelatedToUser) {
