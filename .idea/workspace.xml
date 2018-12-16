@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0375ed4-7a5e-4b8b-85dc-8836fceed127" name="Default" comment="change cardentials of db">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/movies_api.sql" />
+    <list default="true" id="f0375ed4-7a5e-4b8b-85dc-8836fceed127" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,14 +59,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RatingController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RatingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RatingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+            <state relative-caret-position="180">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="e#40#54#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,6 +94,7 @@
       <find>}</find>
       <find>:</find>
       <find>400</find>
+      <find>mahmoudafifi</find>
     </findStrings>
     <replaceStrings>
       <replace>400</replace>
@@ -131,6 +142,7 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -262,7 +274,7 @@
       <option name="presentableId" value="Default" />
       <updated>1544878119679</updated>
       <workItem from="1544878122422" duration="17045000" />
-      <workItem from="1544956395880" duration="20307000" />
+      <workItem from="1544956395880" duration="20482000" />
     </task>
     <task id="LOCAL-00001" summary="This is the first commit including Movie entity,migration and controllers also the operations will be in it such filteration ,sorting">
       <created>1544893786183</created>
@@ -299,11 +311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544978369299</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add DB file">
+      <created>1544978536232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1544978536232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37352000" />
+    <option name="totallyTimeSpent" value="37527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -367,7 +386,8 @@
     <MESSAGE value="This is the first commit including Movie entity,migration and controllers also the operations will be in it such filteration ,sorting" />
     <MESSAGE value="New commit with JWT auth and middleware,rating, attach the movie with genre and other entities" />
     <MESSAGE value="Add some test Cases and README file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some test Cases and README file" />
+    <MESSAGE value="add DB file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add DB file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -753,11 +773,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RatingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+        <state relative-caret-position="180">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="e#40#54#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
