@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMoviesGenresTable extends Migration
+class CreateUserMovieRating extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateMoviesGenresTable extends Migration
      */
     public function up()
     {
-        Schema::create('genre_movie', function (Blueprint $table) {
+        Schema::create('user_movie_rating', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('rating_number');
             $table->unsignedInteger('movie_id');
-            $table->unsignedInteger('genre_id');
-            //foreign keys
+            $table->unsignedInteger('user_id');
+
             $table->foreign('movie_id')->references('id')->on('movies');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -30,7 +31,7 @@ class CreateMoviesGenresTable extends Migration
      */
     public function down()
     {
-        Schema::table('movies_genres', function (Blueprint $table) {
+        Schema::table('user_movie_rating', function (Blueprint $table) {
             //
         });
     }

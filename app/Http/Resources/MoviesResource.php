@@ -22,9 +22,9 @@ class MoviesResource extends JsonResource
             'rating' => $this->rating,
             'genres'=>GenreResource::collection($this->genres),
             'release_year' => $this->release_year,
-            'gross_profit' => $this->gross_profit,
+            'grossProfit' => $this->gross_profit,
             'director' => $this->director,
-            'actors_list' => ActorsResource::collection($this->actors)
+            'actorsList' => ActorsResource::collection($this->actors)
         ];
     }
 }

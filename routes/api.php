@@ -10,9 +10,21 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::resource('movie', 'MoviesController');
+Route::prefix('v1')->middleware('jwt.auth')->group(function () {
+    Route::resource('movie', 'MoviesController');
 
 //route for sorting movies
 
-Route::get('movie/sort/{criteria}', 'MoviesController@sort');
-Route::get('movie/filter/{genre}', 'MoviesController@filter');
+    Route::get('movie/sort/{criteria}', 'MoviesController@sort');
+    Route::get('movie/filter/{genre}', 'MoviesController@filter');
+
+//routes for rating movies
+
+    Route::post('rate/{movie_id}', 'RatingController@rateMovie');
+});
+//routes for user login and register , logout as well
+Route::prefix('v1')->group(function () {
+    Route::Post('user/register', 'APIRegisterController@register');
+    Route::Post('user/login', 'APILoginController@login');
+    Route::post('user/logout', 'APILoginController@logout');
+});

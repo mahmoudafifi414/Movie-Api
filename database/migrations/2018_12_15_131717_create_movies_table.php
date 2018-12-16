@@ -18,7 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('title',100);
             $table->longText('description');
             $table->longText('image_url');
-            $table->float('rating',4,2);
+            $table->float('rating',4,2)->default(0);
             $table->integer('release_year');
             $table->string('gross_profit');
             $table->string('director',100);
